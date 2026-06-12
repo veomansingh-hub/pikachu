@@ -122,7 +122,7 @@ const ctx = canvas.getContext('2d');
 let gardenElements = [];
 let pikachuParticles = [];
 let electricSparks = [];
-const maxGardenElements = 50; 
+const maxGardenElements = 100; 
 let mouse = { x: null, y: null, speed: 0, lastX: null, lastY: null };
 let lastMouseMoveTime = Date.now();
 
@@ -457,34 +457,27 @@ class GardenElement {
   reset() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * -200; 
-    this.size = Math.random() * 6 + 2;
-    this.alpha = Math.random() * 0.45 + 0.15;
-    this.speedX = (Math.random() * 0.4 - 0.2) + 0.2; 
-    this.speedY = (Math.random() * 0.5 + 0.4); 
+    this.size = Math.random() * 8 + 4; // slightly larger for detail
+    this.alpha = Math.random() * 0.45 + 0.2; // clear visibility
     
-    const rand = Math.random();
-    if (rand > 0.6) {
-      this.type = "leaf";
-      this.color = "rgba(74, 222, 128,"; 
-    } else if (rand > 0.3) {
-      this.type = "petal";
-      this.color = "rgba(244, 114, 182,"; 
-    } else {
-      this.type = "pollen";
-      this.color = "rgba(253, 224, 71,"; 
-      this.size = Math.random() * 1.5 + 0.5; 
-    }
+    // Slow motion drift
+    this.speedY = Math.random() * 0.25 + 0.15; // Slow vertical fall
+    this.swaySpeed = Math.random() * 0.01 + 0.005;
+    this.swayOffset = Math.random() * 100;
+    this.speedX = Math.sin(this.swayOffset) * 0.1;
     
     this.rotation = Math.random() * Math.PI * 2;
-    this.rotSpeed = (Math.random() - 0.5) * 0.02;
+    this.rotSpeed = (Math.random() - 0.5) * 0.006; // Slow rotation
   }
 
   update() {
+    this.swayOffset += this.swaySpeed;
+    this.speedX = Math.sin(this.swayOffset) * 0.15;
     this.x += this.speedX;
     this.y += this.speedY;
     this.rotation += this.rotSpeed;
 
-    if (this.y > canvas.height + 50 || this.x > canvas.width + 50) {
+    if (this.y > canvas.height + 50 || this.x > canvas.width + 50 || this.x < -50) {
       this.reset();
       this.y = -50;
       this.x = Math.random() * canvas.width;
@@ -495,18 +488,35 @@ class GardenElement {
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.rotate(this.rotation);
+    
+    // Glossy linear gradient for 3D leaf depth
+    const grad = ctx.createLinearGradient(-this.size, -this.size, this.size, this.size);
+    grad.addColorStop(0, `rgba(244, 63, 94, ${this.alpha})`); // vibrant rose
+    grad.addColorStop(0.35, `rgba(251, 113, 133, ${this.alpha * 1.15})`); // glossy reflection highlight
+    grad.addColorStop(0.85, `rgba(190, 24, 74, ${this.alpha})`); // deep rich crimson shadows
+    
     ctx.beginPath();
+    // Beautiful curved organic teardrop rose petal
+    ctx.moveTo(0, -this.size * 1.6);
+    ctx.quadraticCurveTo(this.size * 1.3, -this.size * 0.8, this.size * 0.8, this.size * 0.5);
+    ctx.quadraticCurveTo(0, this.size * 1.5, -this.size * 0.8, this.size * 0.5);
+    ctx.quadraticCurveTo(-this.size * 1.3, -this.size * 0.8, 0, -this.size * 1.6);
     
-    if (this.type === "leaf") {
-      ctx.ellipse(0, 0, this.size * 1.8, this.size * 0.8, 0, 0, Math.PI * 2);
-    } else if (this.type === "petal") {
-      ctx.ellipse(0, 0, this.size * 1.2, this.size, 0, 0, Math.PI * 2);
-    } else {
-      ctx.arc(0, 0, this.size, 0, Math.PI * 2);
-    }
+    ctx.fillStyle = grad;
     
-    ctx.fillStyle = this.color + this.alpha + ')';
+    // Glossy petal back shadow glow
+    ctx.shadowBlur = 8;
+    ctx.shadowColor = 'rgba(244, 63, 94, 0.4)';
     ctx.fill();
+    ctx.shadowBlur = 0;
+    
+    // Add specular highlight line on upper edge to make it shiny/reflective
+    ctx.beginPath();
+    ctx.arc(-this.size * 0.3, -this.size * 0.5, this.size * 0.5, Math.PI, Math.PI * 1.5);
+    ctx.strokeStyle = `rgba(255, 255, 255, ${this.alpha * 1.2})`;
+    ctx.lineWidth = this.size * 0.12;
+    ctx.stroke();
+
     ctx.restore();
   }
 }
