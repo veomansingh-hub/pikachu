@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THEO.MEDIA | Cosmic Web & POS Software Engineering</title>
+  <meta name="description" content="Bespoke high-performance websites and backend POS platforms for restaurants, cafes, clinics, and ambitious businesses. Launched in 1 week, backed by 30 days of free support." />
+  
+  <!-- Premium Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Syne:wght@700;800&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Custom Cinematic Cursors -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="custom-cursor-dot" id="customCursorDot"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Interactive WebGL-like Canvas Background -->
+  <canvas id="fluid-canvas"></canvas>
+
+  <!-- Fullscreen Lightning Overlay -->
+  <div class="lightning-overlay" id="lightningOverlay"></div>
+
+
+
+
+
+  <!-- Main Floating Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-txt">T</span>
+        <span class="logo-txt">H</span>
+        <span class="logo-txt">E</span>
+        <span class="logo-txt">O</span>
+        <span class="logo-dot">.</span>
+        <span class="logo-txt">M</span>
+        <span class="logo-txt">E</span>
+        <span class="logo-txt">D</span>
+        <span class="logo-txt">I</span>
+        <span class="logo-txt">A</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#why-us" class="nav-link">Why Us</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <a href="#contact" class="btn-cta">Start Project</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Horizontal Scrollytelling Container -->
+  <main class="scroll-container" id="scrollContainer">
+    
+    <!-- SECTION 1: HERO -->
+    <section class="panel panel-hero" id="hero">
+      <div class="hero-glow"></div>
+      <div class="panel-content">
+        <div class="award-tag">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          <span>DIGITAL CRAFTSMANSHIP NOMINEE</span>
+        </div>
+        <h1 class="hero-title">
+          Award-Winning<br>
+          <span class="highlight-blue">Web & POS Software</span>
+        </h1>
+        <p class="hero-desc text-reveal">
+          We build breathtaking digital products that place your business in a tier of its own. Launched in a week. Backed by 30 days of free support.
+        </p>
+        
+        <div class="hero-tags">
+          <span class="tag-chip">Cafes</span>
+          <span class="tag-chip">Restaurants</span>
+          <span class="tag-chip">Clinics</span>
+          <span class="tag-chip">Custom SaaS</span>
+        </div>
+
+        <div class="scroll-indicator">
+          <div class="mouse-icon">
+            <div class="wheel"></div>
+          </div>
+          <span>Scroll to Discover</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: MARQUEE -->
+    <section class="panel panel-marquee" id="marquee-section">
+      <div class="marquee-wrapper">
+        <div class="marquee-track">
+          <span class="marquee-text">Launched in 1 Week • 30 Days Free Support • UK Market • Commission-Free • Award-Winning Layouts • </span>
+          <span class="marquee-text">Launched in 1 Week • 30 Days Free Support • UK Market • Commission-Free • Award-Winning Layouts • </span>
+          <span class="marquee-text">Launched in 1 Week • 30 Days Free Support • UK Market • Commission-Free • Award-Winning Layouts • </span>
+          <span class="marquee-text">Launched in 1 Week • 30 Days Free Support • UK Market • Commission-Free • Award-Winning Layouts • </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SERVICES -->
+    <section class="panel panel-services" id="services">
+      <div class="panel-content">
+        <div class="services-header">
+          <span class="sub-heading">WHAT WE DELIVER</span>
+          <h2 class="section-title">Crafted for Ambitious Industries</h2>
+        </div>
+        
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card" data-index="01">
+            <div class="card-bg-glow"></div>
+            <div class="card-header">
+              <span class="card-num">01</span>
+              <span class="card-tag">READY IN 1 WEEK</span>
+            </div>
+            <h3>Botanical & Small Businesses</h3>
+            <p>A breathtaking, hand-crafted web presence featuring editorial grids and fluid product showcases modeled on real premium brands.</p>
+            <ul class="card-features">
+              <li>Custom brand typography & layouts</li>
+              <li>Modular grids with smooth galleries</li>
+              <li>High-velocity Next.js performance</li>
+            </ul>
+            <div class="card-footer-visual">
+              <div class="line-graph-mock">
+                <div class="graph-line font-line"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card" data-index="02">
+            <div class="card-bg-glow"></div>
+            <div class="card-header">
+              <span class="card-num">02</span>
+              <span class="card-tag">READY IN 1 WEEK</span>
+            </div>
+            <h3>Modern Restaurants</h3>
+            <p>100% commission-free online ordering and payment checkout systems to replace bloated aggregation platforms.</p>
+            <ul class="card-features">
+              <li>Stripe checkout configurations</li>
+              <li>Automated online table bookings</li>
+              <li>CMS panels for menus & prices</li>
+            </ul>
+            <div class="card-footer-visual">
+              <div class="restaurant-mock">
+                <div class="menu-item-mock"></div>
+                <div class="menu-item-mock"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card" data-index="03">
+            <div class="card-bg-glow"></div>
+            <div class="card-header">
+              <span class="card-num">03</span>
+              <span class="card-tag">READY IN 1 WEEK</span>
+            </div>
+            <h3>Clinics & Medical Care</h3>
+            <p>Streamlined medical booking engines and GDPR-compliant intake forms built with surgical-grade precision.</p>
+            <ul class="card-features">
+              <li>Self-service patient appointment calendars</li>
+              <li>Encrypted medical history uploads</li>
+              <li>SMS and email alert trigger events</li>
+            </ul>
+            <div class="card-footer-visual">
+              <div class="clinic-mock">
+                <div class="calendar-item-mock"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card" data-index="04">
+            <div class="card-bg-glow"></div>
+            <div class="card-header">
+              <span class="card-num">04</span>
+              <span class="card-tag">READY IN 1 WEEK</span>
+            </div>
+            <h3>SaaS & POS Systems</h3>
+            <p>Bespoke POS software, shift roster analytical engines, and real-time dashboard visualization hubs.</p>
+            <ul class="card-features">
+              <li>Real-time socket analytics graphs</li>
+              <li>Bespoke database schema setups</li>
+              <li>Roster controls & role authorization</li>
+            </ul>
+            <div class="card-footer-visual">
+              <div class="saas-mock">
+                <div class="pos-node"></div>
+                <div class="pos-node"></div>
+                <div class="pos-node"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHY US -->
+    <section class="panel panel-why" id="why-us">
+      <div class="panel-content">
+        <div class="why-header">
+          <span class="sub-heading">WHY THEO MEDIA</span>
+          <h2 class="section-title">Rapid. Custom. Elite.</h2>
+        </div>
+        
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3>Launched in 1 Week</h3>
+            <p>We design and engineer bespoke software following high-velocity sprints. Skip standard bloated corporate meetings and get live pages immediately.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3>1 Month Free Support</h3>
+            <p>We stay beside your brand. Receive complete system maintenance, code updates, text modifications, and direct hosting support for 30 days post-launch.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <h3>Award-Winning Quality</h3>
+            <p>No generic templates. We build custom websites with premium typography, fluid canvas nodes, and unique hover states that capture Awwwards-level interest.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PRICING -->
+    <section class="panel panel-pricing" id="pricing">
+      <div class="panel-content">
+        <div class="pricing-header">
+          <span class="sub-heading">TRANSPARENT PRICING</span>
+          <h2 class="section-title">Simple pricing for UK markets</h2>
+          <p class="pricing-subtitle">Bespoke software build with zero licensing markups or hidden contract traps.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Plan 1 -->
+          <div class="price-card">
+            <div class="price-header">
+              <span class="price-label">CAFE & SHOPS</span>
+              <h3>Starter Web</h3>
+              <div class="price-value">£950 <span class="term">one-time</span></div>
+            </div>
+            <p class="price-desc">Perfect for boutique shops and cafes wanting a premium digital presence.</p>
+            <ul class="price-list">
+              <li>Custom 5-Section landing page</li>
+              <li>GSAP visual animations</li>
+              <li>Google Local Maps & SEO structure</li>
+              <li>Domain & email connection support</li>
+              <li>1 Week launch delivery</li>
+              <li>1 Month free support</li>
+            </ul>
+            <a href="#contact" class="price-btn">Choose Starter</a>
+          </div>
+
+          <!-- Plan 2 -->
+          <div class="price-card popular">
+            <div class="popular-badge">Most Popular</div>
+            <div class="price-header">
+              <span class="price-label">RESTAURANTS & CLINICS</span>
+              <h3>Business + Backend</h3>
+              <div class="price-value">£1,850 <span class="term">one-time</span></div>
+            </div>
+            <p class="price-desc">Complete backend databases for booking appointments or accepting cart payments.</p>
+            <ul class="price-list">
+              <li>Everything in Starter Web</li>
+              <li>Commission-free ordering & checkout</li>
+              <li>Patient scheduling appointment calendars</li>
+              <li>Admin CMS panel for menus & listings</li>
+              <li>Customer database tables & secure storage</li>
+              <li>1 Week launch delivery</li>
+              <li>1 Month free support</li>
+            </ul>
+            <a href="#contact" class="price-btn popular-btn">Choose Business</a>
+          </div>
+
+          <!-- Plan 3 -->
+          <div class="price-card">
+            <div class="price-header">
+              <span class="price-label">CUSTOM ENTERPRISE</span>
+              <h3>Custom Software</h3>
+              <div class="price-value">£3,500+ <span class="term">one-time</span></div>
+            </div>
+            <p class="price-desc">Bespoke SaaS tools, shift management, and complex workflow dashboards.</p>
+            <ul class="price-list">
+              <li>Custom multi-tenant dashboards</li>
+              <li>Role authorization (Admin/Staff/User)</li>
+              <li>Staff rosters, slots & shift tracking</li>
+              <li>GraphQL/Postgres analytical storage</li>
+              <li>Custom API integrations</li>
+              <li>1-2 Weeks delivery timeline</li>
+              <li>1 Month free support</li>
+            </ul>
+            <a href="#contact" class="price-btn">Choose Custom</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: FAQ -->
+    <section class="panel panel-faq" id="faq">
+      <div class="panel-content">
+        <div class="faq-header">
+          <span class="sub-heading">COMMON QUESTIONS</span>
+          <h2 class="section-title">Clear Answers.</h2>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>How can you deliver a premium website/software in just 1 week?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>We work in hyper-focused sprints directly with the client. By bypassing sluggish agencies, meeting loops, and middle management overheads, we build code incrementally and ship working sections rapidly.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>What does the '1 Month Free Support' include?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>It includes fully managed domain setup, text updates, menu modification, hosting server fine-tuning, error monitoring, and standard updates. If you want to make text updates or minor design corrections, we execute it free of cost for 30 days.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>Are there any recurring fees or hidden platform costs?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>No. We build commission-free ordering systems and custom Pos setups. The only elements you pay are domain registry fees and standard hosting provider costs directly without third-party marks or markup commissions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>Can I manage my own menus, booking calendars, and prices later?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>Yes. We integrate easy-to-use custom administrative CMS panels that allow you to modify menu items, update opening slots, review roster tables, and update prices in just a single tap.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CONTACT / CTA -->
+    <section class="panel panel-contact" id="contact">
+      <div class="contact-glow"></div>
+      <div class="panel-content">
+        <h2 class="cta-title">Let's build<br>something epic.</h2>
+        
+        <div class="contact-actions">
+          <a href="mailto:hello@theomedia.co.uk" class="cta-mail-btn">
+            <span>Launch Your Project</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-block">
+            <span>START A CONVERSATION</span>
+            <a href="mailto:hello@theomedia.co.uk">hello@theomedia.co.uk</a>
+          </div>
+          <div class="info-block text-right">
+            <span>OFFICIAL DETAILS</span>
+            <p>© 2026 Theo Media Ltd. England & Wales. Designed with cinematic precision.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- GSAP scripts and Main script -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
